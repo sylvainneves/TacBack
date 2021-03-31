@@ -5,7 +5,7 @@ const verify = require("./verifyToke");
 router.get("/", verify, async (req, res) => {
   /*   res.send(req.user); */
 
-  const toto = await User.findOne({ _id: req.user._id }).exec();
+  const toto = await User.findOne().exec();
 
   res.send(toto);
 });
