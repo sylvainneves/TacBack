@@ -26,11 +26,10 @@ const loginValidation = (data) => {
 const reservationValidation = (data) => {
   const Joi = require("@hapi/joi");
   const schema = Joi.object({
-    activite: Joi.string().min(6).required(),
-    reservationDate: Joi.string().min(6).required().isoDate(),
-    reservationHour: Joi.string().min(6).required().isoDate(),
-    /*     date: Joi.string().min(6).required().isoDate(), */
-    userId: Joi.string().min(6).required(),
+    dateReservation: Joi.string().min(6).required(),
+    hourReservation: Joi.string().min(3).required(),
+    dureeReservation: Joi.string().min(2).required(),
+    userId: Joi.string().min(3).required(),
   });
   return schema.validate(data);
 };

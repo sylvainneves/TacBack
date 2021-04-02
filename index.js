@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+var cors = require("cors");
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
 const dotenv = require("dotenv");
@@ -21,6 +22,7 @@ mongoose.connect(
   () => console.log("connected to DB")
 );
 
+app.use(cors());
 //Middleware
 app.use(express.json());
 
